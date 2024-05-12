@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.flickfinder.dao.MovieDAO;
+import com.flickfinder.dao.PersonDAO;
 
 import io.javalin.http.Context;
 
@@ -42,9 +43,10 @@ class MovieControllerTest {
 		movieDAO = mock(MovieDAO.class);
 		// We create a mock of the Context class.
 		ctx = mock(Context.class);
+		PersonDAO personDAO = mock(PersonDAO.class);
 
 		// We create an instance of the MovieController class and pass the mock object
-		movieController = new MovieController(movieDAO);
+		movieController = new MovieController(movieDAO, personDAO);
 	}
 
 	/**
